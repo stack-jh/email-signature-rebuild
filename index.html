@@ -137,6 +137,11 @@
         </div>
       </div>
       <div class="field">
+        <label>Instagram (국문 채널)</label>
+        <label class="radio"><input type="checkbox" id="f_showInstagram" /> Instagram 아이콘 표시</label>
+        <p class="hint" style="margin:4px 0 0;">국문 채널이므로 필요한 경우 선택해 주세요. 기본값은 미표시입니다.</p>
+      </div>
+      <div class="field">
         <label>하단 배너</label>
         <div class="radio-row">
           <label class="radio"><input type="radio" name="bannerSel" value="ko" checked /> 국문</label>
@@ -147,7 +152,7 @@
     </form>
 
     <div class="company-note" id="companyNote">
-      <b>회사 공통 항목</b> — 로고, 배너, 주소, 웹사이트, SNS, 연락처 아이콘은
+      <b>회사 공통 항목</b> — 로고, CES 수상 배지, 배너, 주소, 웹사이트, SNS 링크, 연락처 아이콘은
       관리자 설정(config.json)에서 자동으로 적용됩니다. 변경이 필요하면 관리자에게 문의하세요.
     </div>
   </section>
@@ -195,6 +200,7 @@
     v.banner = b ? b.value : "ko";
     var a = document.querySelector('input[name="addrSel"]:checked');
     v.addrLang = a ? a.value : "ko";
+    v.showInstagram = document.getElementById("f_showInstagram").checked;
     return v;
   }
   function render(){
