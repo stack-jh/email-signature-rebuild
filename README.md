@@ -32,3 +32,9 @@ admin.html 열기 → 값 수정 → "config.json 다운로드" →
 ## 아이콘/이미지 교체
 모든 아이콘과 로고는 config.json의 https URL로 지정됩니다.
 주의: sftp:// 경로는 업로드용일 뿐 이메일·브라우저에서 열리지 않으므로 반드시 https URL 사용.
+
+## CES 2027 및 Instagram 기능
+- 회사 로고 아래 CES 2027 최고혁신상 배지 표시(관리자 페이지에서 URL 변경 또는 미표시 가능)
+- Instagram은 국문 채널로, 직원이 표시 여부를 직접 선택하며 기본값은 미표시
+- 배지 및 Instagram PNG는 이 GitHub 저장소의 assets/ 디렉터리에 호스팅
+- GitHub Pages 사용 시 https://stack-jh.github.io/email-signature-rebuild/ 주소가 배포되도록 Pages 설정 필요
