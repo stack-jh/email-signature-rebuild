@@ -19,5 +19,9 @@
   "fb": "https://www.facebook.com/unionbiometrics/",
   "yt": "https://www.youtube.com/@unionbiometrics",
   "ln": "https://www.linkedin.com/company/unionbiometrics",
-  "lockCompanyFields": true
+  "lockCompanyFields": true,
+  "snsIgIcon": "https://stack-jh.github.io/email-signature-rebuild/assets/instagram.png",
+  "ig": "https://www.instagram.com/unionbiometrics/",
+  "cesBadgeUrl": "https://stack-jh.github.io/email-signature-rebuild/assets/ces-2027-best-of-innovation.png",
+  "cesBadgeLink": "https://www.ces.tech/ces-innovation-awards/2027/ubio-x-liveguard/"
 }
