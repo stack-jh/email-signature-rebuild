@@ -135,6 +135,14 @@
           <input id="c_bannerEn" data-key="bannerEn" />
         </div>
         <div class="field">
+          <label for="c_cesBadgeUrl">CES 2027 최고혁신상 배지 이미지 URL <small>(비우면 미표시)</small></label>
+          <input id="c_cesBadgeUrl" data-key="cesBadgeUrl" />
+        </div>
+        <div class="field">
+          <label for="c_cesBadgeLink">CES 수상 상세페이지 링크</label>
+          <input id="c_cesBadgeLink" data-key="cesBadgeLink" />
+        </div>
+        <div class="field">
           <label for="c_homeIcon">홈페이지 아이콘 URL <small>(이메일/주소 사이 홈페이지 줄 아이콘)</small></label>
           <input id="c_homeIcon" data-key="homeIcon" />
         </div>
@@ -157,6 +165,7 @@
         <div class="field"><label for="c_snsFbIcon">Facebook 아이콘</label><input id="c_snsFbIcon" data-key="snsFbIcon" /></div>
         <div class="field"><label for="c_snsYtIcon">YouTube 아이콘</label><input id="c_snsYtIcon" data-key="snsYtIcon" /></div>
         <div class="field"><label for="c_snsLnIcon">LinkedIn 아이콘</label><input id="c_snsLnIcon" data-key="snsLnIcon" /></div>
+        <div class="field"><label for="c_snsIgIcon">Instagram 아이콘</label><input id="c_snsIgIcon" data-key="snsIgIcon" /></div>
       </fieldset>
 
       <fieldset>
@@ -164,6 +173,7 @@
         <div class="field"><label for="c_fb">Facebook</label><input id="c_fb" data-key="fb" /></div>
         <div class="field"><label for="c_yt">YouTube</label><input id="c_yt" data-key="yt" /></div>
         <div class="field"><label for="c_ln">LinkedIn</label><input id="c_ln" data-key="ln" /></div>
+        <div class="field"><label for="c_ig">Instagram (국문)</label><input id="c_ig" data-key="ig" /></div>
       </fieldset>
 
       <fieldset>
@@ -207,7 +217,7 @@
 <script>
 (function(){
   "use strict";
-  var SAMPLE = { name:"홍길동", nameEn:"Gildong Hong", dept:"전략기획본부 / 마케팅팀", title:"팀장", tel:"82 2-6488-3235", mobile:"82 10-0000-0000", email:"hong@unionbiometrics.com", banner:"ko", addrLang:"ko" };
+  var SAMPLE = { name:"홍길동", nameEn:"Gildong Hong", dept:"전략기획본부 / 마케팅팀", title:"팀장", tel:"82 2-6488-3235", mobile:"82 10-0000-0000", email:"hong@unionbiometrics.com", banner:"ko", addrLang:"ko", showInstagram:true };
   var preview = document.getElementById("preview");
   var jsonOut = document.getElementById("jsonOut");
 
