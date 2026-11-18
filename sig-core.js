@@ -82,9 +82,19 @@
     if (c.fb) sns += snsIcon(c.fb, c.snsFbIcon || SNS_ICONS.fb, "facebook icon");
     if (c.yt) sns += snsIcon(c.yt, c.snsYtIcon || SNS_ICONS.yt, "youtube icon");
     if (c.ln) sns += snsIcon(c.ln, c.snsLnIcon || SNS_ICONS.ln, "linkedin icon");
+    if (v.showInstagram && c.ig && c.snsIgIcon) sns += snsIcon(c.ig, c.snsIgIcon, "instagram icon");
     if (sns) sns =
       '<p style="margin:4px 0px 0px;padding:0px;font-family:굴림체;font-size:9pt;color:rgb(0,0,0);line-height:1.2;">'
       + sns + '</p>';
+
+    /* ── CES 2027 Best of Innovation badge ── */
+    var cesBadge = "";
+    if (c.cesBadgeUrl) {
+      cesBadge = '<p style="text-align:center;margin:10px 0 0;padding:0;">'
+        + '<a href="' + esc(c.cesBadgeLink || c.siteUrl || "#") + '" target="_blank" rel="noopener">'
+        + '<img src="' + esc(c.cesBadgeUrl) + '" alt="CES 2027 Best of Innovation" width="82" '
+        + 'style="display:block;margin:0 auto;border:0;width:82px;height:auto;max-width:82px;" /></a></p>';
+    }
 
     /* ── 헤더: 이름(국문+영문) / 부서 | 직책 ── */
     var fullName = esc(v.name) + (v.nameEn ? "&nbsp;" + esc(v.nameEn) : "");
@@ -118,7 +128,7 @@
 + '</tr>\n'
 + '<tr>\n'
 + '  <td width="130" style="margin:0px;padding:0px;width:130px;max-width:130px;height:105px;vertical-align:middle;">\n'
-+      logoCell + '\n'
++      logoCell + cesBadge + '\n'
 + '  </td>\n'
 + '  <td width="469" style="margin:0px;padding:25px 0px 0px;width:469px;max-width:469px;height:102px;vertical-align:top;">\n'
 +      rows + sns + '\n'
@@ -160,6 +170,10 @@
     snsFbIcon: "https://unionbiometrics.com/img/email-signature/facebook.png",
     snsYtIcon: "https://unionbiometrics.com/img/email-signature/youtube.png",
     snsLnIcon: "https://unionbiometrics.com/img/email-signature/linkedin.png",
+    snsIgIcon: "https://stack-jh.github.io/email-signature-rebuild/assets/instagram.png",
+    ig: "https://www.instagram.com/unionbiometrics/",
+    cesBadgeUrl: "https://stack-jh.github.io/email-signature-rebuild/assets/ces-2027-best-of-innovation.png",
+    cesBadgeLink: "https://www.ces.tech/ces-innovation-awards/2027/ubio-x-liveguard/",
     fb: "https://www.facebook.com/unionbiometrics/",
     yt: "https://www.youtube.com/@unionbiometrics",
     ln: "https://www.linkedin.com/company/unionbiometrics",
