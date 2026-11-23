@@ -90,10 +90,10 @@
     /* ── CES 2027 Best of Innovation badge ── */
     var cesBadge = "";
     if (c.cesBadgeUrl) {
-      cesBadge = '<p style="text-align:center;margin:10px 0 0;padding:0;">'
+      cesBadge = '<p style="text-align:right;margin:0;padding:0;">'
         + '<a href="' + esc(c.cesBadgeLink || c.siteUrl || "#") + '" target="_blank" rel="noopener">'
         + '<img src="' + esc(c.cesBadgeUrl) + '" alt="CES 2027 Best of Innovation" width="82" '
-        + 'style="display:block;margin:0 auto;border:0;width:82px;height:auto;max-width:82px;" /></a></p>';
+        + 'style="display:block;margin:0 0 0 auto;border:0;width:82px;height:auto;max-width:82px;" /></a></p>';
     }
 
     /* ── 헤더: 이름(국문+영문) / 부서 | 직책 ── */
@@ -117,10 +117,10 @@
 
     var html =
 '<table cellspacing="0" cellpadding="0" border="0" width="599" style="font-family:arial,sans-serif;color:rgb(0,0,0);width:599px;max-width:599px;table-layout:fixed;overflow-wrap:break-word;word-break:normal;border-collapse:collapse;">\n'
-+ '<colgroup><col width="130" style="width:130px;" /><col width="469" style="width:469px;" /></colgroup>\n'
++ '<colgroup><col width="130" style="width:130px;" /><col width="373" style="width:373px;" /><col width="96" style="width:96px;" /></colgroup>\n'
 + '<tbody>\n'
 + '<tr>\n'
-+ '  <td colspan="2" width="599" style="margin:0px;padding:0px 0px 4px;border-bottom:1px solid ' + C_LINE + ';width:599px;height:45px;">\n'
++ '  <td colspan="3" width="599" style="margin:0px;padding:0px 0px 4px;border-bottom:1px solid ' + C_LINE + ';width:599px;height:45px;">\n'
 + '    <p style="margin:0px;padding:0px;color:#101010;font-size:10pt;font-family:arial,sans-serif;line-height:1.2;">'
 +      '<span style="font-weight:700;font-size:18pt;font-family:arial,sans-serif;color:#101010;">' + fullName + '</span><br />'
 +      '<span style="font-family:굴림체;font-size:10pt;color:' + C_DEPT + ';">' + esc(v.dept) + '</span>' + titlePart + '</p>\n'
@@ -128,10 +128,13 @@
 + '</tr>\n'
 + '<tr>\n'
 + '  <td width="130" style="margin:0px;padding:0px;width:130px;max-width:130px;height:105px;vertical-align:middle;">\n'
-+      logoCell + cesBadge + '\n'
++      logoCell + '\n'
 + '  </td>\n'
-+ '  <td width="469" style="margin:0px;padding:25px 0px 0px;width:469px;max-width:469px;height:102px;vertical-align:top;">\n'
++ '  <td width="373" style="margin:0px;padding:15px 8px 0px 0px;width:373px;max-width:373px;height:102px;vertical-align:top;">\n'
 +      rows + sns + '\n'
++ '  </td>\n'
++ '  <td width="96" style="margin:0px;padding:14px 0px 0px;width:96px;max-width:96px;vertical-align:top;text-align:right;">\n'
++      cesBadge + '\n'
 + '  </td>\n'
 + '</tr>\n'
 + '</tbody>\n'
