@@ -150,7 +150,8 @@
       var prefix = design === "minimal" ? "bannerMinimal" : "bannerWorldFirst";
       if (sel === "ko") bannerUrl = c[prefix + "Ko"] || "";
       else if (sel === "en") bannerUrl = c[prefix + "En"] || "";
-      bannerHref = c.bannerCesLink || c.cesBadgeLink || bannerHref;
+      var languageLink = sel === "en" ? c.bannerCesLinkEn : c.bannerCesLinkKo;
+      bannerHref = languageLink || c.bannerCesLink || c.cesBadgeLink || bannerHref;
     } else {
       if (sel === "ko") bannerUrl = c.bannerKo || "";
       else if (sel === "en") bannerUrl = c.bannerEn || "";
@@ -175,11 +176,13 @@
     logoCaption: "",
     bannerKo: "https://unionbiometrics.com/wp-content/uploads/logo/email_kor.gif",
     bannerEn: "https://unionbiometrics.com/img/email-signature/banner/ci/email-eng.gif",
-    bannerMinimalKo: "https://stack-jh.github.io/email-signature-rebuild/assets/liveguard_email_banner_ko_minimal_1200x300.png",
-    bannerMinimalEn: "https://stack-jh.github.io/email-signature-rebuild/assets/liveguard_email_banner_en_minimal_1200x300.png",
-    bannerWorldFirstKo: "https://stack-jh.github.io/email-signature-rebuild/assets/liveguard_email_banner_ko_world_first_1200x300.png",
-    bannerWorldFirstEn: "https://stack-jh.github.io/email-signature-rebuild/assets/liveguard_email_banner_en_world_first_1200x300.png",
+    bannerMinimalKo: "https://stack-jh.github.io/email-signature-rebuild/assets/liveguard_email_banner_ko_minimal_1200x300.png?v=20261124-layout2",
+    bannerMinimalEn: "https://stack-jh.github.io/email-signature-rebuild/assets/liveguard_email_banner_en_minimal_1200x300.png?v=20261124-layout2",
+    bannerWorldFirstKo: "https://stack-jh.github.io/email-signature-rebuild/assets/liveguard_email_banner_ko_world_first_1200x300.png?v=20261124-layout2",
+    bannerWorldFirstEn: "https://stack-jh.github.io/email-signature-rebuild/assets/liveguard_email_banner_en_world_first_1200x300.png?v=20261124-layout2",
     bannerCesLink: "https://www.ces.tech/ces-innovation-awards/2027/ubio-x-liveguard/",
+    bannerCesLinkKo: "https://unionbiometrics.com/ubio-x-liveguard/",
+    bannerCesLinkEn: "https://unionbiometrics.com/en/ubio-x-liveguard/",
     iconTel: "https://unionbiometrics.com/img/email-signature/telephone.png",
     iconMobile: "https://unionbiometrics.com/img/email-signature/mobile.png",
     iconEmail: "https://unionbiometrics.com/img/email-signature/email.png",

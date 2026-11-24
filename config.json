@@ -24,9 +24,11 @@
   "ig": "https://www.instagram.com/unionbiometrics/",
   "cesBadgeUrl": "https://stack-jh.github.io/email-signature-rebuild/assets/ces-2027-best-of-innovation.png",
   "cesBadgeLink": "https://www.ces.tech/ces-innovation-awards/2027/ubio-x-liveguard/",
-  "bannerMinimalKo": "https://stack-jh.github.io/email-signature-rebuild/assets/liveguard_email_banner_ko_minimal_1200x300.png",
-  "bannerMinimalEn": "https://stack-jh.github.io/email-signature-rebuild/assets/liveguard_email_banner_en_minimal_1200x300.png",
-  "bannerWorldFirstKo": "https://stack-jh.github.io/email-signature-rebuild/assets/liveguard_email_banner_ko_world_first_1200x300.png",
-  "bannerWorldFirstEn": "https://stack-jh.github.io/email-signature-rebuild/assets/liveguard_email_banner_en_world_first_1200x300.png",
-  "bannerCesLink": "https://www.ces.tech/ces-innovation-awards/2027/ubio-x-liveguard/"
+  "bannerMinimalKo": "https://stack-jh.github.io/email-signature-rebuild/assets/liveguard_email_banner_ko_minimal_1200x300.png?v=20261124-layout2",
+  "bannerMinimalEn": "https://stack-jh.github.io/email-signature-rebuild/assets/liveguard_email_banner_en_minimal_1200x300.png?v=20261124-layout2",
+  "bannerWorldFirstKo": "https://stack-jh.github.io/email-signature-rebuild/assets/liveguard_email_banner_ko_world_first_1200x300.png?v=20261124-layout2",
+  "bannerWorldFirstEn": "https://stack-jh.github.io/email-signature-rebuild/assets/liveguard_email_banner_en_world_first_1200x300.png?v=20261124-layout2",
+  "bannerCesLink": "https://www.ces.tech/ces-innovation-awards/2027/ubio-x-liveguard/",
+  "bannerCesLinkKo": "https://unionbiometrics.com/ubio-x-liveguard/",
+  "bannerCesLinkEn": "https://unionbiometrics.com/en/ubio-x-liveguard/"
 }
