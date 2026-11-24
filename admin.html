@@ -41,12 +41,12 @@
   .field{margin-bottom:10px;}
   .field label{display:block;font-size:12px;font-weight:600;margin-bottom:4px;}
   .field label small{font-weight:400;color:var(--ink-soft);}
-  .field input{
+  .field input, .field select{
     width:100%;padding:9px 11px;border:1px solid var(--line);border-radius:8px;
     font-size:13px;font-family:inherit;color:var(--ink);background:#fbfdfd;
     transition:border-color .15s, box-shadow .15s;
   }
-  .field input:focus{outline:none;border-color:var(--admin);box-shadow:0 0 0 3px rgba(58,90,152,.15);}
+  .field input:focus, .field select:focus{outline:none;border-color:var(--admin);box-shadow:0 0 0 3px rgba(58,90,152,.15);}
   .check{display:flex;align-items:flex-start;gap:8px;font-size:12.5px;line-height:1.5;}
   .check input{width:auto;margin-top:2px;}
   .preview-stage{
@@ -149,6 +149,30 @@
       </fieldset>
 
       <fieldset>
+        <legend>CES 2027 배너</legend>
+        <div class="field">
+          <label for="c_bannerMinimalKo">CES 수상형 — 국문 이미지 URL</label>
+          <input id="c_bannerMinimalKo" data-key="bannerMinimalKo" />
+        </div>
+        <div class="field">
+          <label for="c_bannerMinimalEn">CES 수상형 — 영문 이미지 URL</label>
+          <input id="c_bannerMinimalEn" data-key="bannerMinimalEn" />
+        </div>
+        <div class="field">
+          <label for="c_bannerWorldFirstKo">CES 기술 강조형 — 국문 이미지 URL</label>
+          <input id="c_bannerWorldFirstKo" data-key="bannerWorldFirstKo" />
+        </div>
+        <div class="field">
+          <label for="c_bannerWorldFirstEn">CES 기술 강조형 — 영문 이미지 URL</label>
+          <input id="c_bannerWorldFirstEn" data-key="bannerWorldFirstEn" />
+        </div>
+        <div class="field">
+          <label for="c_bannerCesLink">CES 배너 클릭 시 이동할 URL</label>
+          <input id="c_bannerCesLink" data-key="bannerCesLink" />
+        </div>
+      </fieldset>
+
+      <fieldset>
         <legend>연락처 아이콘 <small style="font-weight:400;">— 비우면 아래 폴더 URL의 기본 아이콘, 그것도 없으면 T/M/E/A 텍스트</small></legend>
         <div class="field"><label for="c_iconTel">유선전화 (T)</label><input id="c_iconTel" data-key="iconTel" /></div>
         <div class="field"><label for="c_iconMobile">휴대전화 (M)</label><input id="c_iconMobile" data-key="iconMobile" /></div>
@@ -188,6 +212,22 @@
 
   <section class="panel" aria-label="미리보기 및 내보내기">
     <h2>미리보기 <small style="font-weight:400;color:var(--ink-soft);">— 예시 인물 적용</small></h2>
+    <div class="field">
+      <label for="previewDesign">미리보기 배너 디자인</label>
+      <select id="previewDesign">
+        <option value="minimal">CES 수상형 · 흰 배경</option>
+        <option value="worldFirst">CES 기술 강조형 · 블루 배경</option>
+        <option value="legacy">기존 회사소개 배너</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="previewLang">미리보기 배너 언어</label>
+      <select id="previewLang">
+        <option value="ko">국문</option>
+        <option value="en">영문</option>
+        <option value="none">사용 안 함</option>
+      </select>
+    </div>
     <div class="preview-stage">
       <div id="preview"></div>
     </div>
@@ -213,7 +253,7 @@
 
 <div class="toast" id="toast" role="status"></div>
 
-<script src="sig-core.js"></script>
+<script src="sig-core.js?v=20261124-banners"></script>
 <script>
 (function(){
   "use strict";
@@ -237,12 +277,17 @@
   }
   function render(){
     var c = readConfig();
+    SAMPLE.bannerDesign = document.getElementById("previewDesign").value;
+    SAMPLE.banner = document.getElementById("previewLang").value;
     preview.innerHTML = SigCore.buildSignature(SAMPLE, c);
     jsonOut.value = JSON.stringify(c, null, 2);
   }
 
   document.getElementById("adminForm").addEventListener("input", render);
   document.getElementById("c_lock").addEventListener("change", render);
+
+  document.getElementById("previewDesign").addEventListener("change", render);
+  document.getElementById("previewLang").addEventListener("change", render);
 
   /* 현재 배포된 config.json을 불러와 폼에 채움 (없으면 기본값) */
   SigCore.loadConfig().then(function(c){ fillForm(c); render(); });

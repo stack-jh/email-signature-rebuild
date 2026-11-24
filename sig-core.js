@@ -143,14 +143,24 @@
     /* 배너: v.banner = "ko" | "en" | "none" (기본 ko) */
     var bannerUrl = "";
     var sel = v.banner || "ko";
-    if (sel === "ko") bannerUrl = c.bannerKo || "";
-    else if (sel === "en") bannerUrl = c.bannerEn || "";
+    // 기존 호출(v.bannerDesign 없음)은 종전 배너 설정을 계속 사용합니다.
+    var design = v.bannerDesign || "legacy";
+    var bannerHref = c.siteUrl || "#";
+    if (design === "minimal" || design === "worldFirst") {
+      var prefix = design === "minimal" ? "bannerMinimal" : "bannerWorldFirst";
+      if (sel === "ko") bannerUrl = c[prefix + "Ko"] || "";
+      else if (sel === "en") bannerUrl = c[prefix + "En"] || "";
+      bannerHref = c.bannerCesLink || c.cesBadgeLink || bannerHref;
+    } else {
+      if (sel === "ko") bannerUrl = c.bannerKo || "";
+      else if (sel === "en") bannerUrl = c.bannerEn || "";
+    }
     if (bannerUrl) {
       html +=
 '<p style="margin:0px;padding:0px;font-family:굴림체;font-size:9pt;color:rgb(0,0,0);line-height:1.2;"><br /></p>\n'
 + '<p style="margin:0px;padding:0px;line-height:1.2;">'
-+ '<a href="' + esc(c.siteUrl || "#") + '" target="_blank">'
-+ '<img alt="banner" src="' + esc(bannerUrl) + '" style="width:600px;height:150px;border:0;vertical-align:middle;" /></a></p>\n';
++ '<a href="' + esc(bannerHref) + '" target="_blank">'
++ '<img width="600" height="150" alt="banner" src="' + esc(bannerUrl) + '" style="width:600px;height:150px;border:0;vertical-align:middle;" /></a></p>\n';
     }
     return html;
   }
@@ -165,6 +175,11 @@
     logoCaption: "",
     bannerKo: "https://unionbiometrics.com/wp-content/uploads/logo/email_kor.gif",
     bannerEn: "https://unionbiometrics.com/img/email-signature/banner/ci/email-eng.gif",
+    bannerMinimalKo: "https://stack-jh.github.io/email-signature-rebuild/assets/liveguard_email_banner_ko_minimal_1200x300.png",
+    bannerMinimalEn: "https://stack-jh.github.io/email-signature-rebuild/assets/liveguard_email_banner_en_minimal_1200x300.png",
+    bannerWorldFirstKo: "https://stack-jh.github.io/email-signature-rebuild/assets/liveguard_email_banner_ko_world_first_1200x300.png",
+    bannerWorldFirstEn: "https://stack-jh.github.io/email-signature-rebuild/assets/liveguard_email_banner_en_world_first_1200x300.png",
+    bannerCesLink: "https://www.ces.tech/ces-innovation-awards/2027/ubio-x-liveguard/",
     iconTel: "https://unionbiometrics.com/img/email-signature/telephone.png",
     iconMobile: "https://unionbiometrics.com/img/email-signature/mobile.png",
     iconEmail: "https://unionbiometrics.com/img/email-signature/email.png",
